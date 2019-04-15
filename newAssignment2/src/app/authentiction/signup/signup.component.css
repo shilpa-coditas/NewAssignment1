@@ -1,0 +1,15 @@
+.signupForm{
+    display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.signupForm> div {
+   
+    width: 30%;
+    /* border: 1px solid gray; */
+   
+  }
+  input{
+      border: 1px solid gray;
+      width: 100%;
+  }
