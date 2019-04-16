@@ -10,20 +10,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatInputModule} from '@angular/material/input';
+import { AddNewuserComponent } from './add-newuser/add-newuser.component';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
-  declarations: [SignupComponent, SigninComponent, HomeComponent],
+  declarations: [SignupComponent, SigninComponent, HomeComponent, AddNewuserComponent],
   imports: [
     CommonModule,
     AuthentictionRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
     
   ],
   exports:[
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ]
 })
 export class AuthentictionModule { }

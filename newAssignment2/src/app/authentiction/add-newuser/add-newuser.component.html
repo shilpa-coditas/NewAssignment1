@@ -1,0 +1,67 @@
+<div class="signup-form">
+  
+    <form class="signupForm" [formGroup]='addUserForm'>
+      <div class="formHeader">
+           Add User Form
+      </div>
+      <div  class="from-row">
+          <mat-form-field> 
+              email Id
+            <input matInput  formControlName="email">
+            <mat-error *ngIf="addUserForm.get('email').hasError('required')">
+                Email is required!
+              </mat-error>
+              <mat-error *ngIf="addUserForm.get('email').hasError('pattern')">
+                  Enter valid email address!
+                </mat-error>
+          </mat-form-field>
+        </div>
+        <div  class="from-row">
+            <mat-form-field> 
+              Phone
+              <input matInput  formControlName="phone" type="text">
+              <mat-error *ngIf="addUserForm.get('phone').hasError('required')">
+                  phone no is required!
+                </mat-error>
+                <mat-error *ngIf="addUserForm.get('phone').hasError('pattern')">
+                    Enter valid mobile!
+                  </mat-error>
+            </mat-form-field>
+          </div>
+      <div  class="from-row">
+      <mat-form-field> 
+        first name
+        <input matInput  formControlName="firstName" type="text">
+        <mat-error *ngIf="addUserForm.get('firstName').hasError('required')">
+            first name is required!
+          </mat-error>
+      </mat-form-field>
+    </div>
+  <div  class="from-row">
+      <mat-form-field> 
+          last name
+        <input matInput formControlName="lastName">
+        <mat-error *ngIf="addUserForm.get('lastName').hasError('required')">
+            last name is required!
+          </mat-error>
+          
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-select class="selectBox1" placeholder="select contry">
+            <!-- (selectionChange)="onSelectSort($event.value)" -->
+            <mat-option *ngFor="let contrys of contry" [value]="contrys.value">
+              {{contrys.viewValue}}
+            </mat-option>
+          </mat-select>
+    </div>
+  
+    <div>
+        <!-- <mat-form-field>  -->
+            <button mat-button color="primary" class="btnSignup">add user</button>
+          <!-- </mat-form-field> -->
+    </div>
+    </form>
+  
+  </div>
+  

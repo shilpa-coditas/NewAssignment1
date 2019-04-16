@@ -20,6 +20,7 @@
       <mat-error *ngIf="signUpForm.get('lastName').hasError('required')">
           last name is required!
         </mat-error>
+        
     </mat-form-field>
   </div>
 <div  class="from-row">
@@ -29,6 +30,9 @@
       <mat-error *ngIf="signUpForm.get('email').hasError('required')">
           Email is required!
         </mat-error>
+        <mat-error *ngIf="signUpForm.get('email').hasError('pattern')">
+            Enter valid email address!
+          </mat-error>
     </mat-form-field>
   </div>
 <div  class="from-row">

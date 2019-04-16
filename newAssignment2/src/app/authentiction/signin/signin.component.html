@@ -1,6 +1,6 @@
 <div class="signup-form">
   
-    <form class="signupForm" [formGroup]='signUpForm'>
+    <form class="signupForm" [formGroup]='signinForm'>
       <div class="formHeader">
            Sign In Form
       </div>
@@ -8,23 +8,27 @@
       <mat-form-field> 
           email Id
         <input matInput  formControlName="email">
-        <mat-error *ngIf="signUpForm.get('email').hasError('required')">
+        <mat-error *ngIf="signinForm.get('email').hasError('required')">
             Email is required!
           </mat-error>
+          <mat-error *ngIf="signinForm.get('email').hasError('pattern')">
+							Enter valid email address!
+						</mat-error>
       </mat-form-field>
     </div>
   <div  class="from-row">
       <mat-form-field> 
           password
         <input matInput  formControlName="password" type="password">
-        <mat-error *ngIf="signUpForm.get('password').hasError('required')">
+        <mat-error *ngIf="signinForm.get('password').hasError('required')">
             password is required!
           </mat-error>
+          
       </mat-form-field>
     </div>
     <div>
         <!-- <mat-form-field>  -->
-            <button mat-button color="primary" class="btnSignup">signup</button>
+            <button mat-button color="primary" class="btnSignup" (click)='signin()'>signin</button>
           <!-- </mat-form-field> -->
     </div>
     </form>
