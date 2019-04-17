@@ -1,8 +1,8 @@
 <div class="signup-form">
   
-    <form class="signupForm" [formGroup]='addUserForm'>
+    <form class="signupForm" [formGroup]='addUserForm'(submit) ='onSubmit()'>
       <div class="formHeader">
-           Add User Form
+           Add User 
       </div>
       <div  class="from-row">
           <mat-form-field> 
@@ -54,7 +54,26 @@
               {{contrys.viewValue}}
             </mat-option>
           </mat-select>
+         
     </div>
+    <div>
+      <mat-select class="selectBox1" placeholder="select state">
+          <!-- (selectionChange)="onSelectSort($event.value)" -->
+          <mat-option *ngFor="let state of states" [value]="state.value">
+            {{state.viewValue}}
+          </mat-option>
+        </mat-select>
+       
+  </div>
+  <div>
+    <mat-select class="selectBox1" placeholder="select city">
+        <!-- (selectionChange)="onSelectSort($event.value)" -->
+        <mat-option *ngFor="let city of cities" [value]="cities.value">
+          {{city.viewValue}}
+        </mat-option>
+      </mat-select>
+     
+</div>
   
     <div>
         <!-- <mat-form-field>  -->

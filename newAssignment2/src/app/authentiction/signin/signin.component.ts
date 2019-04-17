@@ -25,4 +25,20 @@ export class SigninComponent implements OnInit {
       password:['',Validators.compose([Validators.required])]
     });
   }
+  onlogin(){
+  //   let uname= this.loginData.value.userName;
+  //   let psw=this.loginData.value.password;
+  //  // console.log(this.userData[0].userName)
+  //   for(let i=0;i<this.userData.length;i++){
+  
+  //     //console.log(this.userData[i].userName);
+  //    if(uname === this.userData[i].userName && psw === this.userData[i].password){
+  //     console.log(this.userData[i].userName);
+  //       this.router.navigate(['/home']);
+        
+     }
+    }
+    
 }
+
+ 

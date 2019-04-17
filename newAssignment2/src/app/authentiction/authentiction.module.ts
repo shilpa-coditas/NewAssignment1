@@ -6,12 +6,14 @@ import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SignupService } from './services/signup.service'
 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatInputModule} from '@angular/material/input';
-import { AddNewuserComponent } from './add-newuser/add-newuser.component';
+import {AddNewuserComponent } from './add-newuser/add-newuser.component';
 import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [SignupComponent, SigninComponent, HomeComponent, AddNewuserComponent],
   imports: [
@@ -28,6 +30,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule
-  ]
+  ],
+  providers:[SignupService]
+  
 })
 export class AuthentictionModule { }

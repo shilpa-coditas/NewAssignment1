@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { SignupService } from '../services/signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,12 +11,15 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   signUpForm: FormGroup;
+  userArray:any[]=[];;
   // firstName: FormControl;
 	// lastName: FormControl;
 	// email: FormControl;
 	// password: FormControl;
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private signupServ:SignupService,private router:Router) { 
+    this.userArray=JSON.parse(this.signupServ.getDetails());
+  }
 
   ngOnInit() {
     
@@ -29,6 +34,23 @@ export class SignupComponent implements OnInit {
       password:['',Validators.compose([Validators.required])]
     });
   }
+  onSubmit(){
+
+    let parray2 =[];
+  let user = this.signUpForm.value;
+  console.log("user"+user);
+    if(!Array.isArray(this.userArray)){
+      parray2.push(user);
+    }else{
+      parray2=this.userArray;
+      parray2.push(user);
+    }
+    console.log("singup data",parray2);
+    this.signupServ.saveDetails(JSON.stringify(parray2));
+    this.router.navigate(['authorization/home']);
+
+  }
+  
 
   
 }

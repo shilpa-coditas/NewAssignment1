@@ -15,6 +15,14 @@ export class AddNewuserComponent implements OnInit {
     {value: 'INDIA', viewValue: 'INDIA'},
     
   ];
+  USA:any[]=[
+    {value: '', viewValue: ''}];
+  
+  INDIA:any[]=[
+    {value:'maharashtra',viewValue:'maharashtra'},
+    {value:'MP',viewValue:'MP'},
+  ];
+  
   constructor(private formBuilder: FormBuilder,private router:Router) { }
 
 
