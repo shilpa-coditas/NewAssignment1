@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { SignupService } from '../services/signup.service';
 
 @Component({
   selector: 'app-signin',
@@ -10,13 +11,16 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
 
   signinForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,private router:Router) { }
+  loginData:any[]=[];
+  constructor(private formBuilder: FormBuilder,private router:Router,private signupServ:SignupService) {
+    this.loginData=JSON.parse(this.signupServ.getDetails());
+   }
 
   ngOnInit() {
     this.initFroms();
   }
   signin(){
-    this.router.navigate(['authorization/addUser']);
+   
   }
   initFroms(){
     this.signinForm = this.formBuilder.group({
@@ -25,19 +29,21 @@ export class SigninComponent implements OnInit {
       password:['',Validators.compose([Validators.required])]
     });
   }
-  onlogin(){
-  //   let uname= this.loginData.value.userName;
-  //   let psw=this.loginData.value.password;
-  //  // console.log(this.userData[0].userName)
-  //   for(let i=0;i<this.userData.length;i++){
-  
-  //     //console.log(this.userData[i].userName);
-  //    if(uname === this.userData[i].userName && psw === this.userData[i].password){
-  //     console.log(this.userData[i].userName);
-  //       this.router.navigate(['/home']);
-        
-     }
+
+
+
+  onSignin(){
+    let email=this.signinForm.value.email;
+    let psw= this.signinForm.value.password;
+    console.log(email+"sdddddd"+psw);
+    for(let i=0;i<this.loginData.length;i++){
+      if(email === this.loginData[i].email && psw === this.loginData[i].password){
+        console.log(email);
+        this.router.navigate(['authorization/addUser']);
+      }
     }
+  }
+
     
 }
 
