@@ -48,7 +48,7 @@
       </mat-form-field>
     </div>
     <div>
-        <mat-select class="selectBox1" placeholder="select contry">
+        <mat-select class="selectBox1" placeholder="select contry" formControlName="contry">
             <!-- (selectionChange)="onSelectSort($event.value)" -->
             <mat-option *ngFor="let contrys of contry" [value]="contrys.value">
               {{contrys.viewValue}}
@@ -57,7 +57,7 @@
          
     </div>
     <div>
-      <mat-select class="selectBox1" placeholder="select state">
+      <mat-select class="selectBox1" placeholder="select state" formControlName="state">
           <!-- (selectionChange)="onSelectSort($event.value)" -->
           <mat-option *ngFor="let state of states" [value]="state.value">
             {{state.viewValue}}
@@ -66,7 +66,7 @@
        
   </div>
   <div>
-    <mat-select class="selectBox1" placeholder="select city">
+    <mat-select class="selectBox1" placeholder="select city" formControlName="contry">
         <!-- (selectionChange)="onSelectSort($event.value)" -->
         <mat-option *ngFor="let city of cities" [value]="cities.value">
           {{city.viewValue}}
@@ -76,9 +76,9 @@
 </div>
   
     <div>
-        <!-- <mat-form-field>  -->
+        
             <button mat-button color="primary" class="btnSignup">add user</button>
-          <!-- </mat-form-field> -->
+          
     </div>
     </form>
   

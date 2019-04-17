@@ -22,7 +22,7 @@ export class AddNewuserComponent implements OnInit {
     {value:'maharashtra',viewValue:'maharashtra'},
     {value:'MP',viewValue:'MP'},
   ];
-  
+  states:any[];
   constructor(private formBuilder: FormBuilder,private router:Router) { }
 
 
@@ -39,5 +39,11 @@ export class AddNewuserComponent implements OnInit {
       lastName:['',Validators.compose([Validators.required])]
     });
   }
+  addUser(){
 
+  }
+
+  checkEmailId(){
+
+  }
 }

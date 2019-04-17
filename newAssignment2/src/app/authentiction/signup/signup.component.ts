@@ -12,10 +12,7 @@ export class SignupComponent implements OnInit {
 
   signUpForm: FormGroup;
   userArray:any[]=[];;
-  // firstName: FormControl;
-	// lastName: FormControl;
-	// email: FormControl;
-	// password: FormControl;
+  
   
   constructor(private formBuilder: FormBuilder,private signupServ:SignupService,private router:Router) { 
     this.userArray=JSON.parse(this.signupServ.getDetails());
